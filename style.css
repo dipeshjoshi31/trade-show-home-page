@@ -984,6 +984,11 @@ body.no-scroll {
 
 .lighting-carousel .hero-stage {
   position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  align-items: center;
+  gap: clamp(20px, 3vw, 46px);
+  min-height: 0;
   border-radius: 10px 10px 0 0;
   overflow: hidden;
 }
@@ -993,45 +998,7 @@ body.no-scroll {
   z-index: 2;
   min-height: clamp(430px, 54vw, 620px);
   padding: clamp(34px, 5vw, 70px) clamp(22px, 4vw, 56px) 120px;
-  background-image:
-    linear-gradient(
-      90deg,
-      rgba(6, 17, 42, 0.88) 0%,
-      rgba(6, 17, 42, 0.78) 34%,
-      rgba(6, 17, 42, 0.35) 64%,
-      rgba(6, 17, 42, 0.08) 100%
-    ),
-    url("asset/hero.jpeg");
-  background-size: cover;
-  background-position: top;
-}
-
-.static-hero::before,
-.static-hero::after {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  pointer-events: none;
-}
-
-.static-hero::before {
-  width: 580px;
-  height: 580px;
-  background: radial-gradient(circle, #c9943346, rgba(201, 149, 61, 0) 72%);
-  top: -320px;
-  right: -120px;
-}
-
-.static-hero::after {
-  width: 650px;
-  height: 650px;
-  background: radial-gradient(
-    circle,
-    rgba(6, 17, 42, 0.35) 0%,
-    rgba(6, 17, 42, 0) 72%
-  );
-  left: -220px;
-  bottom: -350px;
+  background: #f7f9fc;
 }
 
 .hero-copy {
@@ -1040,9 +1007,23 @@ body.no-scroll {
   max-width: min(560px, 100%);
 }
 
+.hero-right-media {
+  margin: 0;
+  position: relative;
+  z-index: 2;
+  align-self: end;
+}
+
+.hero-right-media img {
+  display: block;
+  width: min(100%, 780px);
+  height: auto;
+  margin-left: auto;
+}
+
 .slide-title {
   margin: 0;
-  color: #fff;
+  color: var(--navy);
   font-size: clamp(34px, 4.7vw, 62px);
   font-weight: 700;
   line-height: 1.05;
@@ -1052,7 +1033,7 @@ body.no-scroll {
 
 .slide-description {
   margin: 20px 0 0;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--navy);
   font-size: clamp(16px, 1.3vw, 21.6px);
   line-height: 1.55;
   max-width: 46ch;
@@ -1062,7 +1043,7 @@ body.no-scroll {
   margin-top: 38px;
   width: fit-content;
   border-radius: 10px;
-  border: 1px solid var(--gold);
+  border: 1px solid var(--navy);
   padding: 10px 26px;
   display: flex;
   align-items: center;
@@ -1071,34 +1052,22 @@ body.no-scroll {
   font-weight: 700;
   color: #fff;
   text-decoration: none;
-  background: linear-gradient(
-    to bottom,
-    #d4a865 0%,
-    #c49550 20%,
-    #a07840 40%,
-    #5d4423 65%,
-    #3d260f 85%,
-    #1c0f07 100%
-  );
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.28),
-    0 8px 18px rgba(8, 27, 62, 0.35);
+  background: var(--navy);
+  box-shadow: 0 8px 18px rgba(8, 27, 62, 0.25);
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease,
-    filter 0.25s ease;
+    background-color 0.25s ease;
 }
 
 .cta-button:hover {
   transform: translateY(-2px);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.32),
-    0 12px 22px rgba(8, 27, 62, 0.4);
-  filter: saturate(1.08);
+  background: var(--navy-deep);
+  box-shadow: 0 12px 22px rgba(8, 27, 62, 0.35);
 }
 
 .cta-button:focus-visible {
-  outline: 3px solid rgba(255, 255, 255, 0.7);
+  outline: 3px solid rgba(13, 39, 84, 0.35);
   outline-offset: 2px;
 }
 
@@ -1107,10 +1076,18 @@ body.no-scroll {
     margin-bottom: 22px;
   }
 
+  .lighting-carousel .hero-stage {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(16px, 2.8vw, 28px);
+  }
+
   .static-hero {
     min-height: clamp(400px, 68vw, 560px);
     padding: clamp(30px, 5vw, 58px) clamp(20px, 4vw, 40px) 98px;
-    /* background-position: 56% center; */
+  }
+
+  .hero-right-media img {
+    width: min(100%, 640px);
   }
 
   .slide-description {
@@ -1123,10 +1100,24 @@ body.no-scroll {
     margin-bottom: 18px;
   }
 
+  .lighting-carousel .hero-stage {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
   .static-hero {
-    min-height: 460px;
+    min-height: auto;
     padding: 30px 18px 90px;
-    /* background-position: 64% center; */
+  }
+
+  .hero-right-media {
+    align-self: auto;
+  }
+
+  .hero-right-media img {
+    width: 100%;
+    max-width: 540px;
+    margin: 8px auto 0;
   }
 
   .slide-title {
@@ -1556,7 +1547,7 @@ body.no-scroll {
 .backdrop-shell {
   display: grid;
   grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
-  align-items: stretch;
+  align-items: center;
   gap: clamp(16px, 3vw, 35px);
 }
 
