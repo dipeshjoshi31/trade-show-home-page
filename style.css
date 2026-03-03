@@ -172,6 +172,7 @@ body.no-scroll {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
   gap: 3px;
   font-size: clamp(16px, 1.45vw, 21.6px);
   letter-spacing: 0.01em;
