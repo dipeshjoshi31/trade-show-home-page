@@ -1052,8 +1052,7 @@ body.no-scroll {
   font-weight: 700;
   color: #fff;
   text-decoration: none;
-  background: var(--navy);
-  box-shadow: 0 8px 18px rgba(8, 27, 62, 0.25);
+  background: #060f25;
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease,
@@ -1062,7 +1061,6 @@ body.no-scroll {
 
 .cta-button:hover {
   transform: translateY(-2px);
-  background: var(--navy-deep);
   box-shadow: 0 12px 22px rgba(8, 27, 62, 0.35);
 }
 
@@ -1105,19 +1103,24 @@ body.no-scroll {
     align-items: start;
   }
 
+  .hero-copy {
+    order: 1;
+  }
+
   .static-hero {
     min-height: auto;
     padding: 30px 18px 90px;
   }
 
   .hero-right-media {
+    order: -1;
     align-self: auto;
   }
 
   .hero-right-media img {
     width: 100%;
     max-width: 540px;
-    margin: 8px auto 0;
+    margin: 0 auto 12px;
   }
 
   .slide-title {
