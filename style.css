@@ -309,7 +309,6 @@ body.no-scroll {
 
 .header-nav {
   border-top: 1px solid #e1e5ef;
-  background-color: #060f25;
 }
 
 .header-menu {
@@ -324,26 +323,14 @@ body.no-scroll {
   position: relative;
 }
 
-.header-menu > li + li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  width: 1px;
-  height: 20px;
-  transform: translateY(-50%);
-  background: rgba(201, 149, 61, 0.7);
-}
-
 .header-menu a,
 .dropdown-trigger {
   display: block;
   padding: 10px 12px;
-  color: #ffffff;
+  color: #060f25;
   text-decoration: none;
   font-size: clamp(16px, 1.1vw, 19.84px);
   font-weight: 600;
-  line-height: 1.15;
 }
 
 .header-menu > li > a,
@@ -355,7 +342,8 @@ body.no-scroll {
 .header-menu a:focus-visible,
 .dropdown-trigger:hover,
 .dropdown-trigger:focus-visible {
-  color: var(--gold);
+  color: #ffffff;
+  background-color: #060f25;
 }
 
 .header-menu a:focus-visible,
@@ -399,7 +387,8 @@ body.no-scroll {
 .header-menu > li > a[aria-current="page"],
 .header-menu > li > .dropdown-details > .dropdown-trigger[aria-current="page"],
 .dropdown-details[open] > .dropdown-trigger {
-  color: var(--gold);
+  color: #ffffff;
+  background-color: #060f25;
 }
 
 .header-menu > li > a[aria-current="page"]::after,
@@ -998,13 +987,7 @@ body.no-scroll {
   z-index: 2;
   min-height: clamp(430px, 54vw, 620px);
   padding: clamp(34px, 5vw, 70px) clamp(22px, 4vw, 56px) 120px;
-  background: linear-gradient(
-    90deg,
-    rgba(198, 212, 236, 0.98) 0%,
-    rgba(219, 230, 247, 0.94) 38%,
-    rgba(237, 244, 253, 0.92) 72%,
-    rgba(250, 252, 255, 0.97) 100%
-  );
+  background: url("asset/Hero-Banner-Background.png") center / cover no-repeat;
 }
 
 .hero-copy {
@@ -1315,32 +1298,26 @@ body.no-scroll {
   width: 25%;
   height: 4px;
   border-radius: 999px;
-  background: linear-gradient(
-    90deg,
-    rgba(240, 207, 139, 0.25) 0%,
-    rgba(201, 149, 61, 0.95) 50%,
-    rgba(240, 207, 139, 0.25) 100%
-  );
-  box-shadow: 0 0 8px rgba(201, 149, 61, 0.35);
+  background: linear-gradient(90deg,
+        rgba(6, 15, 37, 0.95) 0%,
+        rgba(6, 15, 37, 0.6) 75%,
+        rgba(6, 15, 37, 0.1) 100%);
+        box-shadow: 0 0 10px rgba(39, 83, 165, 0.38);
 }
 /* Left line — starts earlier with color */
 .social-proof .proof-panel > .section-title::before {
-  background: linear-gradient(
-    90deg,
-    rgba(240, 207, 139, 0.1) 0%,
-    rgba(201, 149, 61, 0.6) 25%,
-    rgba(201, 149, 61, 0.95) 100%
-  );
+  background: linear-gradient(90deg,
+        rgba(6, 15, 37, 0.1) 0%,
+        rgba(6, 15, 37, 0.6) 25%,
+        rgba(6, 15, 37, 0.95) 100%);
 }
 
 /* Right line — mirror of left */
 .social-proof .proof-panel > .section-title::after {
-  background: linear-gradient(
-    90deg,
-    rgba(201, 149, 61, 0.95) 0%,
-    rgba(201, 149, 61, 0.6) 75%,
-    rgba(240, 207, 139, 0.1) 100%
-  );
+  background: linear-gradient(90deg,
+        rgba(6, 15, 37, 0.95) 0%,
+        rgba(6, 15, 37, 0.6) 75%,
+        rgba(6, 15, 37, 0.1) 100%);
 }
 .category-grid {
   display: grid;
@@ -1440,32 +1417,26 @@ body.no-scroll {
   width: 35%;
   height: 4px;
   border-radius: 999px;
-  background: linear-gradient(
-    90deg,
-    rgba(240, 207, 139, 0.25) 0%,
-    rgba(201, 149, 61, 0.95) 50%,
-    rgba(240, 207, 139, 0.25) 100%
-  );
-  box-shadow: 0 0 8px rgba(201, 149, 61, 0.35);
+  background: linear-gradient(90deg,
+        rgba(6, 15, 37, 0.1) 0%,
+        rgba(6, 15, 37, 0.6) 25%,
+        rgba(6, 15, 37, 0.95) 100%);
+  box-shadow: 0 0 10px rgba(39, 83, 165, 0.38);
 }
 /* Left line — starts earlier with color */
 .brands-subtitle::before {
-  background: linear-gradient(
-    90deg,
-    rgba(240, 207, 139, 0.1) 0%,
-    rgba(201, 149, 61, 0.6) 25%,
-    rgba(201, 149, 61, 0.95) 100%
-  );
+  background: linear-gradient(90deg,
+        rgba(6, 15, 37, 0.1) 0%,
+        rgba(6, 15, 37, 0.6) 25%,
+        rgba(6, 15, 37, 0.95) 100%);
 }
 
 /* Right line — mirror of left */
 .brands-subtitle::after {
-  background: linear-gradient(
-    90deg,
-    rgba(201, 149, 61, 0.95) 0%,
-    rgba(201, 149, 61, 0.6) 75%,
-    rgba(240, 207, 139, 0.1) 100%
-  );
+  background: linear-gradient(90deg,
+        rgba(6, 15, 37, 0.95) 0%,
+        rgba(6, 15, 37, 0.6) 75%,
+        rgba(6, 15, 37, 0.1) 100%);
 }
 
 .brand-cloud {
